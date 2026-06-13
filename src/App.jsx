@@ -1,42 +1,20 @@
-import React, { useState } from 'react'; // [STEP 1: useState import kiya]
-import emailjs from '@emailjs/browser';  // [STEP 2: emailjs library import ki]
+import React, { useState } from 'react'; 
+import emailjs from '@emailjs/browser'; 
+import { SiLeetcode, SiCodechef, SiGeeksforgeeks, SiHackerrank } from 'react-icons/si';
 function App(){
-    // [STEP 3: EmailJS ka logic yahan add kiya]
+    const [selectedCert, setSelectedCert] = useState(null);
     const [status, setStatus] = useState("");
-
     const sendEmail = (e) => {
         e.preventDefault();
-
-        // ⚠️ Replace these with your actual IDs from EmailJS Dashboard
         emailjs.sendForm('service_w5nacoe', 'template_0bn2cum', e.target, 'QU-C3GNxgOkFRnTP8')
             .then((result) => {
                 setStatus("Message Sent! 🚀");
-                e.target.reset(); // Form clear ho jayega
+                e.target.reset();
             }, (error) => {
                 setStatus("Failed, try again.");
             });
     };
 
-    // Projects Data
-    const projects=[
-        {
-            title:"AI-Resume-Analyzer",
-            desc:"An automated tool built with Python and Streamlit to parse resumes, extract key skills, and provide data-driven feedback for improved ATS compatibility.",
-            tech:["Python","NLP","Machine Learning","AI","PDF-Processing","Streamlit","Text-Processing"],
-            github:"https://github.com/madhavisolanki-ui/AI-Resume-Analyzer",
-            live:"#"
-        },
-        {
-            title:"Student-Performance-Analyzer",
-            desc:"An end-to-end ML application using Scikit-learn and Streamlit. Features data analysis and a real-time interface for academic performance forecasting.",
-            tech:["Python","Machine Learning","Data-Analysis","Streamlit","Scikit-learn"],
-            github:"https://github.com/madhavisolanki-ui/Student-Performance-Analyzer",
-            live:"#"
-        }
-    ];
-
-    // DSA Topics Data
-    const dsaTopics=["Arrays","Linked Lists","Trees & Graphs","Recursion & Backtracking","Dynamic Programming"];
 
     return(
         <div className="min-h-screen bg-slate-950 text-slate-100 font-sans scroll-smooth">
@@ -45,15 +23,24 @@ function App(){
                 <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
                 {/* Logo */}
                 <a href="#about" className="font-mono font-bold text-xl text-teal-400 hover:text-white transition-all tracking-wider">
-                    &lt;Madhavi.Dev/&gt;
+                    <div className="font-mono font-bold text-xl">
+                    <a href="#home" className="flex flex-col leading-none group transition-all duration-300">
+    <span className="text-lg font-bold text-slate-100 tracking-wide group-hover:text-teal-400 transition-colors">
+    MADHAVI SOLANKI
+    </span>
+    <span className="text-[10px] text-teal-400 uppercase tracking-[0.2em] font-mono opacity-80 group-hover:opacity-100 transition-opacity">
+    AI & Web Developer
+    </span>
+</a>
+</div>
                 </a>
 
                 {/* Links */}
                 <div className="hidden md:flex items-center space-x-1">
                     {[
                         { name: "About", href: "#about" },
-                        { name: "Skills", href: "#skills" },
                         { name: "Education", href: "#education" },
+                        { name: "Skills", href: "#skills" },
                         { name: "Projects", href: "#projects" },
                         { name: "Contact", href: "#contact" }
                     ].map((link) => (
@@ -68,7 +55,7 @@ function App(){
             
                     {/* Resume Button (Professional Touch) */}
                     <a 
-                        href="/resume.pdf" 
+                        href="/images/resume-12.pdf" 
                         target="_blank"
                         className="ml-4 px-5 py-2 text-sm font-medium border border-teal-500/30 text-teal-400 rounded-full hover:bg-teal-500/10 transition-all"
                     >
@@ -79,55 +66,116 @@ function App(){
         </nav>
 
             {/*2. Hero Section */}
-            <section id="about" className="max-w-5xl mx-auto px-6 pt-32 pb-20 md:pt-48 md:pb-32 flex flex-col justify-center">
-    
-            {/* Status Tag */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 mb-6 rounded-full border border-teal-500/20 bg-teal-500/10 text-teal-400 text-xs font-medium tracking-wide w-fit">
-        <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-teal-500"></span>
-        </span>
-        OPEN TO COLLABORATIONS
+            <section
+                id="about"
+                className="max-w-5xl mx-auto px-6 pt-32 pb-20 md:pt-48 md:pb-32"
+            >
+            <div>
+                {/* Open to Internship Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full border border-teal-500/20 bg-teal-500/10 text-teal-400 text-sm">
+            🚀 Open for Internships & Collaborations
+            </div>
+
+            {/* Intro */}
+<p className="text-teal-400 font-medium mb-4">
+    B.Tech CSE @ GLA University | AI & ML Enthusiast
+</p>
+
+{/* Heading */}
+<h1 className="text-5xl md:text-7xl font-bold mb-6">
+    Hi, I'm <span className="text-teal-400">Madhavi Solanki</span>
+</h1>
+
+{/* Highlight Line */}
+<p className="text-slate-500 text-sm md:text-base mb-6">
+    Open Source Contributor • GSSoC'26 • IIT Ropar Summer Intern
+</p>
+
+{/* Description */}
+<p className="text-slate-400 text-lg leading-relaxed mb-6 max-w-3xl">
+    Passionate about Artificial Intelligence,
+    Machine Learning, Generative AI, LLMs, and building real-world intelligent applications.
+</p>
+
+{/* Location */}
+<div className="flex items-center gap-2 text-slate-500 mb-8">
+    📍 Uttar Pradesh, India
+</div>
+
+{/* Contact Info */}
+<div className="flex flex-wrap gap-6 text-sm text-slate-400 mb-8">
+
+    <a
+    href="mailto:madhavisolanki02@gmail.com"
+    className="hover:text-teal-400 transition-colors"
+    >
+    📧 madhavisolanki02@gmail.com
+    </a>
+
+    <a
+    href="https://github.com/madhavisolanki-ui"
+    target="_blank"
+    rel="noreferrer"
+    className="hover:text-teal-400 transition-colors"
+    >
+    💻 GitHub
+    </a>
+
+    <a
+    href="https://leetcode.com/u/Madhavi_1912/"
+    target="_blank"
+    rel="noreferrer"
+    className="hover:text-teal-400 transition-colors"
+    >
+    🏆 LeetCode
+    </a>
+
+</div>
+
+
+{/* Buttons */}
+<div className="flex gap-4 flex-wrap mb-10">
+    <a
+    href="#projects"
+    className="bg-teal-500 hover:bg-teal-400 text-slate-950 px-6 py-3 rounded-lg font-semibold transition-all"
+    >
+    View Projects
+    </a>
+
+    <a
+    href="/images/resume-12.pdf"
+    target="_blank"
+    rel="noreferrer"
+    className="border border-teal-500 text-teal-400 px-6 py-3 rounded-lg hover:bg-teal-500/10 transition-all"
+    >
+    Resume
+    </a>
+</div>
+
+{/* Stats */}
+<div className="flex flex-wrap gap-10">
+    <div>
+    <h3 className="text-3xl font-bold text-teal-400">800+</h3>
+    <p className="text-slate-500 text-sm">DSA Problems Solved</p>
     </div>
 
-    {/* Main Headline */}
-    <h1 className="text-5xl md:text-8xl font-extrabold tracking-tight text-slate-100 mb-6">
-        Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500">Madhavi</span>.
-    </h1>
+    <div>
+    <h3 className="text-3xl font-bold text-teal-400">6+</h3>
+    <p className="text-slate-500 text-sm">Certifications</p>
+    </div>
 
-    {/* Sub-headline */}
-    <h2 className="text-3xl md:text-5xl font-bold text-slate-400 mb-8 max-w-3xl leading-tight">
-        Building intelligent systems and data-driven web experiences.
-    </h2>
-
-    {/* Bio */}
-    <p className="text-slate-500 max-w-2xl text-lg mb-10 leading-relaxed">
-        B.Tech CS student focused on <span className="text-slate-300 font-medium">AI & ML</span>. 
-        I specialize in building RAG-based LLM applications, Java systems, and scalable web solutions that solve real-world problems.
-    </p>
-
-    {/* Action Buttons */}
-    <div className="flex flex-wrap gap-4">
-        <a href="#projects" className="group bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold px-8 py-4 rounded-xl shadow-lg shadow-teal-500/20 transition-all active:scale-95">
-            View Projects 
-            <span className="ml-2 group-hover:translate-x-1 inline-block transition-transform">→</span>
-        </a>
-        
-        {/* Social Buttons Container */}
-        <div className="flex gap-4">
-            <a href="https://github.com/madhavisolanki-ui" target="_blank" rel="noreferrer" 
-                className="flex items-center gap-2 px-6 py-4 bg-slate-900 border border-slate-700 hover:border-slate-500 rounded-xl transition-all text-slate-300 hover:text-white">
-                GitHub
-            </a>
-            <a href="https://www.linkedin.com/in/madhavi-solanki-9a36b0337" target="_blank" rel="noreferrer" 
-                className="flex items-center gap-2 px-6 py-4 bg-blue-900/10 border border-blue-500/20 hover:border-blue-500/40 rounded-xl transition-all text-blue-400">
-                LinkedIn
-            </a>
-        </div>
+    <div>
+    <h3 className="text-3xl font-bold text-teal-400">2+</h3>
+    <p className="text-slate-500 text-sm">AI Projects</p>
+    </div>
+</div>
     </div>
 </section>
 
-            {/* 3. About Me */}
+<div className="max-w-5xl mx-auto px-6 py-4">
+  <div className="h-px bg-gradient-to-r from-transparent via-teal-500/50 to-transparent"></div>
+</div>
+
             {/* 3. About Me */}
 <section id="about-me" className="max-w-4xl mx-auto px-6 py-20">
     <h2 className="text-3xl font-bold text-slate-100 mb-8 flex items-center">
@@ -184,7 +232,7 @@ function App(){
             
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2">
                 <h4 className="text-lg font-bold text-slate-200">B.Tech in Computer Science</h4>
-                <span className="text-teal-400 font-mono text-sm">2024 - 2028</span>
+                <span className="text-teal-400 font-mono text-sm">2024 - Present</span>
             </div>
             <p className="text-slate-400 font-medium mb-2">GLA University</p>
             <p className="text-slate-500 text-sm leading-relaxed max-w-xl">
@@ -215,11 +263,22 @@ function App(){
 
     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         {[
-            { title: "Languages", skills: ["Java", "Python", "C++", "JavaScript"] },
-            { title: "Web Development", skills: ["React.js", "Node.js", "Tailwind CSS", "HTML/CSS"] },
-            { title: "Database & AI", skills: ["MongoDB", "MySQL", "RAG", "LLMs"] },
-            { title: "Tools & OS", skills: ["Git / GitHub", "VS Code", "Linux", "Docker"] }
-        ].map((category, idx) => (
+    {
+    "title": "Core AI & Machine Learning",
+    "skills": ["Generative AI", "LLMs", "RAG (Retrieval-Augmented Generation)", "Data Science", "Scikit-learn", "Pandas & NumPy"]
+    },
+    {
+    "title": "AI Engineering & Deployment",
+    "skills": ["Streamlit", "REST APIs", "Docker", "Node.js (Backend)", "React.js (Frontend)"]
+    },
+    {
+    "title": "Programming & Data Logic",
+    "skills": ["Python", "Java", "C", "Data Structures & Algorithms (DSA)", "SQL", "MongoDB"]
+    },
+    {"title": "Tools & Platforms",
+    "skills": ["Git","GitHub","VS Code","Power BI","Linux","Postman"]
+    }
+].map((category, idx) => (
             <div key={idx} className="bg-slate-900/50 p-6 rounded-xl border border-slate-800 hover:border-teal-500/30 transition-all group">
                 <h4 className="text-teal-400 font-bold mb-4 text-sm uppercase tracking-wider">{category.title}</h4>
                 <div className="flex flex-wrap gap-2">
@@ -243,18 +302,18 @@ function App(){
     <div className="grid md:grid-cols-2 gap-8">
         {[
             {
-                title: "AI RAG Chatbot",
-                desc: "A conversational AI that retrieves documents and answers queries using LLMs and vector databases.",
-                tech: ["Python", "LangChain", "Pinecone"],
-                github: "#",
-                live: "#"
+                title:"AI-Resume-Analyzer",
+                desc:"Built an AI-powered Resume Analyzer using Python, NLP and Streamlit that automatically extracts skills, analyzes resume content and provides ATS-based feedback to improve resume quality.",
+                tech:["Python","NLP","Machine Learning","AI","PDF-Processing","Streamlit","Text-Processing"],
+                github:"https://github.com/madhavisolanki-ui/AI-Resume-Analyzer",
+                live:"#"
             },
             {
-                title: "Portfolio Website",
-                desc: "A responsive, minimalist personal portfolio built with React and Tailwind CSS.",
-                tech: ["React", "Tailwind CSS", "EmailJS"],
-                github: "#",
-                live: "#"
+                title:"Student-Performance-Analyzer",
+                desc:"Developed an end-to-end Machine Learning application using Scikit-learn and Streamlit to predict student performance through data analysis and real-time forecasting.",
+                tech:["Python","Machine Learning","Data-Analysis","Streamlit","Scikit-learn"],
+                github:"https://github.com/madhavisolanki-ui/Student-Performance-Analyzer",
+                live:"#"
             }
         ].map((project, i) => (
             <div key={i} className="group bg-slate-900/40 p-6 rounded-2xl border border-slate-800 hover:border-teal-500/30 transition-all duration-300">
@@ -292,14 +351,14 @@ function App(){
             <div className="absolute -left-[5px] top-1 h-2.5 w-2.5 rounded-full bg-slate-800 group-hover:bg-teal-400 transition-colors duration-300"></div>
             
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2">
-                <h4 className="text-lg font-bold text-slate-200">Research Intern</h4>
-                <span className="text-teal-400 font-mono text-sm">Summer 2025</span>
+                <h4 className="text-lg font-bold text-slate-200">Summer Intern</h4>
+                <span className="text-teal-400 font-mono text-sm">May 2026 - Present</span>
             </div>
-            <p className="text-slate-400 font-medium mb-4">IIT Ropar | Department of Computer Science</p>
+            <p className="text-slate-400 font-medium mb-4">IIT Ropar | Vicharanshala </p>
             
             <ul className="list-disc list-outside text-slate-500 text-sm leading-relaxed max-w-xl ml-4 space-y-2">
-                <li>Worked under Prof. [Professor's Name] on <span className="text-slate-300">[Project Topic/Area, e.g., LLM Optimization]</span>.</li>
-                <li>Implemented efficient data processing scripts, reducing computation time by [X]%.</li>
+                <li>Worked under Prof. Sudarshan Iyenger on <span className="text-slate-300">FAQ Project</span>.</li>
+                <li>Implemented efficient data processing scripts, reducing computation time by 30%.</li>
                 <li>Gained hands-on experience in research methodology, literature review, and experimental analysis.</li>
             </ul>
         </div>
@@ -309,7 +368,7 @@ function App(){
             <div className="absolute -left-[5px] top-1 h-2.5 w-2.5 rounded-full bg-slate-800 group-hover:bg-teal-400 transition-colors duration-300"></div>
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2">
                 <h4 className="text-lg font-bold text-slate-200">Open Source Contributor</h4>
-                <span className="text-teal-400 font-mono text-sm">2024 - Present</span>
+                <span className="text-teal-400 font-mono text-sm">May 2026 - Present</span>
             </div>
             <p className="text-slate-400 font-medium mb-4">GitHub | Global Community</p>
             <ul className="list-disc list-outside text-slate-500 text-sm leading-relaxed max-w-xl ml-4 space-y-2">
@@ -328,74 +387,129 @@ function App(){
 
     <div className="grid md:grid-cols-2 gap-6">
         {[
-            { 
-                title: "Google Data Analytics Professional Certificate", 
-                org: "Google/Coursera", 
-                date: "2025" 
-            },
-            { 
-                title: "NPTEL Programming in Java", 
-                org: "NPTEL / IIT Madras", 
-                date: "2025" 
-            },
-            { 
-                title: "Machine Learning Specialization", 
-                org: "DeepLearning.AI", 
-                date: "2026" 
-            }
+            { title: "What Is Generative AI?", org: "LinkedIn Learning", date: "Jun 2026", img: "/images/gen-ai-lin.png" },
+            { title: "Get started building with Power BI", org: "Microsoft Learn", date: "Jun 2026", img: "/images/power-BI.png" },
+            { title: "Develop a vision-enabled generative AI application", org: "Microsoft Learn", date: "Jun 2026", img: "/images/gen-ai-vision.png" },
+            { title: "MongoDB Overview: Core Concepts and Architecture", org: "MongoDB", date: "Mar 2026", img: "/images/MongoDB.png" },
+            { title: "GenAI Powered Data Analytics Job Simulation", org: "TATA Group", date: "Nov 2025", img: "/images/tata.png" },
+            { title: "Data Science", org: "Infosys Springboard", date: "Aug 2025", img: "/images/data-science.png" }
         ].map((cert, i) => (
-            <div key={i} className="flex items-start gap-4 p-5 bg-slate-900/30 border border-slate-800 rounded-xl">
-                {/* Certificate Icon */}
-                <div className="mt-1 bg-slate-800 p-2 rounded-lg text-teal-400">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+            <div key={i} className="group relative bg-slate-900/30 border border-slate-800 rounded-xl p-6 hover:border-teal-500/50 transition-all duration-300 overflow-hidden">
+                
+                {/* 1. Background image (Hidden by default, shows on hover) */}
+                <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300">
+                    <img src={cert.img} alt={cert.title} className="w-full h-full object-cover" />
                 </div>
-                {/* Details */}
-                <div>
-                    <h4 className="text-md font-bold text-slate-200">{cert.title}</h4>
-                    <p className="text-sm text-slate-400">{cert.org}</p>
-                    <span className="text-xs font-mono text-teal-500/70">{cert.date}</span>
+
+                {/* 2. Hover "View" Button (Centered on card) */}
+                <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <a href={cert.img} target="_blank" rel="noreferrer" className="px-5 py-2 bg-teal-500/10 border border-teal-500 text-teal-400 font-semibold rounded-lg hover:bg-teal-500 hover:text-white transition-all transform scale-90 group-hover:scale-100">
+                        View Certificate
+                    </a>
+                </div>
+
+                {/* 3. Text Content (Always visible) */}
+                <div className="relative z-0">
+                    <h4 className="text-md font-bold text-slate-200 group-hover:text-teal-400 transition-colors">
+                        {cert.title}
+                    </h4>
+                    <p className="text-sm text-slate-400 mt-1">{cert.org}</p>
+                    <span className="text-xs font-mono text-teal-500/70 mt-2 block">{cert.date}</span>
                 </div>
             </div>
         ))}
     </div>
 </section>
 
-            {/* 9. Achievements & Coding Profiles */}
 <section id="achievements" className="max-w-5xl mx-auto px-6 py-20 border-t border-slate-900">
     <h2 className="text-3xl font-bold text-slate-100 mb-10 flex items-center">
         <span className="text-teal-400 mr-2">07.</span> Achievements & Profiles
     </h2>
 
-    {/* Coding Profiles Grid */}
     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
         {[
-            { name: "LeetCode", url: "https://leetcode.com/u/Madhavi_1912/", desc: "600+ Solved" },
-            { name: "CodeChef", url: "#", desc: "Contest Rating" },
-            { name: "GeeksforGeeks", url: "#", desc: "Problems Solved" },
-            { name: "HackerRank", url: "#", desc: "Badges" }
-        ].map((platform, i) => (
-            <a key={i} href={platform.url} target="_blank" rel="noreferrer" className="p-4 bg-slate-900 rounded-lg border border-slate-800 text-center hover:border-teal-500 hover:bg-teal-500/5 transition-all">
-                <div className="text-sm font-bold text-slate-200">{platform.name}</div>
-                <div className="text-xs text-slate-500 mt-1">{platform.desc}</div>
+    { 
+        name: "LeetCode", 
+        url: "https://leetcode.com/u/Madhavi_1912/", 
+        desc: "400+ Solved | 4 Badges", 
+        icon: <SiLeetcode className="text-orange-500" /> 
+    },
+    { 
+        name: "CodeChef", 
+        url: "https://www.codechef.com/users/local_lions_10", 
+        desc: "100+ Solved | 1 Badge", 
+        icon: <SiCodechef className="text-yellow-700" /> 
+    },
+    { 
+        name: "GeeksforGeeks", 
+        url: "https://www.geeksforgeeks.org/profile/madhavisot493", 
+        desc: "150+ Solved", 
+        icon: <SiGeeksforgeeks className="text-green-600" /> 
+    },
+    { 
+        name: "HackerRank", 
+        url: "https://www.hackerrank.com/profile/madhavisolanki02", 
+        desc: "100+ Solved | 5 Badges", 
+        icon: <SiHackerrank className="text-green-500" /> 
+    }
+].map((platform, i) => (
+            <a 
+                key={i} 
+                href={platform.url} 
+                target="_blank" 
+                rel="noreferrer" 
+                className="flex items-center gap-4 bg-slate-900/30 p-4 rounded-xl border border-slate-800 hover:border-teal-500/50 transition-all group"
+            >
+                <div className="text-3xl">
+                    {platform.icon}
+                </div>
+                <div>
+                    <h4 className="font-bold text-slate-200 group-hover:text-teal-400">{platform.name}</h4>
+                    <p className="text-xs text-slate-400">{platform.desc}</p>
+                </div>
             </a>
         ))}
     </div>
 
     {/* Achievements List */}
     <div className="bg-slate-900/30 p-8 rounded-2xl border border-slate-800">
-        <h4 className="text-lg font-bold text-slate-200 mb-6">Key Achievements</h4>
-        <ul className="space-y-4">
-            <li className="flex items-start gap-3 text-slate-400 text-sm">
-                <span className="text-teal-400">🏆</span> Won 1st place in [Hackathon Name] for building [Project Name].
-            </li>
-            <li className="flex items-start gap-3 text-slate-400 text-sm">
-                <span className="text-teal-400">🏅</span> Secured [Rank] in [Coding Contest Name] out of [Number] participants.
-            </li>
-            <li className="flex items-start gap-3 text-slate-400 text-sm">
-                <span className="text-teal-400">✨</span> Position of Responsibility: [Your Role] at [College Club Name].
-            </li>
-        </ul>
+    <h4 className="text-xl font-bold text-slate-100 mb-8">Key Achievements</h4>
+    
+    <div className="space-y-6">
+        {/* Achievement Item 1 */}
+        <div className="flex gap-4">
+            <span className="text-2xl mt-1">🏆</span>
+            <div>
+                <h5 className="font-bold text-slate-200">Problem Solving Excellence</h5>
+                <p className="text-sm text-slate-400 mt-1 leading-relaxed">
+                    Solved 800+ complex DSA problems across LeetCode, CodeChef, and GeeksforGeeks, demonstrating strong algorithmic logic.
+                </p>
+            </div>
+        </div>
+
+        {/* Achievement Item 2 */}
+        <div className="flex gap-4">
+            <span className="text-2xl mt-1">✨</span>
+            <div>
+                <h5 className="font-bold text-slate-200">AI & Prompt Engineering</h5>
+                <p className="text-sm text-slate-400 mt-1 leading-relaxed">
+                    Participated in 'The Prompt Prodigy' Challenge by AI Academia; gained hands-on experience in leveraging GenAI models through advanced prompt engineering.
+                </p>
+            </div>
+        </div>
+
+        {/* Achievement Item 3 */}
+        <div className="flex gap-4">
+            <span className="text-2xl mt-1">🏅</span>
+            <div>
+                <h5 className="font-bold text-slate-200">Technical Competitions</h5>
+                <p className="text-sm text-slate-400 mt-1 leading-relaxed">
+                    Successfully participated in SheTech Coding Quest (IEEE WIE) and Devi@thon Hackathon, focusing on collaborative problem-solving and scalable software solutions.
+                </p>
+            </div>
+        </div>
     </div>
+</div>
 </section>
             {/* 10. Contact Section */}
             <section id="contact" className="max-w-xl mx-auto px-6 py-24 border-t border-slate-900 text-center">
