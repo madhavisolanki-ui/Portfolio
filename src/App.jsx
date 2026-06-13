@@ -29,7 +29,7 @@ function App(){
     MADHAVI SOLANKI
     </span>
     <span className="text-[10px] text-teal-400 uppercase tracking-[0.2em] font-mono opacity-80 group-hover:opacity-100 transition-opacity">
-    AI & ML Enthusiast
+    Aspiring AI Engineer
     </span>
 </a>
 </div>
