@@ -88,7 +88,7 @@ function App(){
 
 {/* Highlight Line */}
 <p className="text-slate-500 text-sm md:text-base mb-6">
-    Open Source Contributor • GSSoC'26 • IIT Ropar Summer Intern
+    Open Source Contributor • GSSoC'26 
 </p>
 
 {/* Description */}
@@ -346,22 +346,6 @@ function App(){
     </h2>
 
     <div className="space-y-12">
-        {/* IIT Ropar Internship */}
-        <div className="relative pl-8 border-l border-slate-800 group">
-            <div className="absolute -left-[5px] top-1 h-2.5 w-2.5 rounded-full bg-slate-800 group-hover:bg-teal-400 transition-colors duration-300"></div>
-            
-            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2">
-                <h4 className="text-lg font-bold text-slate-200">Summer Intern</h4>
-                <span className="text-teal-400 font-mono text-sm">May 2026 - Present</span>
-            </div>
-            <p className="text-slate-400 font-medium mb-4">IIT Ropar | Vicharanshala </p>
-            
-            <ul className="list-disc list-outside text-slate-500 text-sm leading-relaxed max-w-xl ml-4 space-y-2">
-                <li>Worked under Prof. Sudarshan Iyenger on <span className="text-slate-300">FAQ Project</span>.</li>
-                <li>Implemented efficient data processing scripts, reducing computation time by 30%.</li>
-                <li>Gained hands-on experience in research methodology, literature review, and experimental analysis.</li>
-            </ul>
-        </div>
 
         {/* Open Source Contribution (Already discussed) */}
         <div className="relative pl-8 border-l border-slate-800 group">
