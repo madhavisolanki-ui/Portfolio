@@ -306,7 +306,7 @@ function App(){
                 desc:"Built an AI-powered Resume Analyzer using Python, NLP and Streamlit that automatically extracts skills, analyzes resume content and provides ATS-based feedback to improve resume quality.",
                 tech:["Python","NLP","Machine Learning","AI","PDF-Processing","Streamlit","Text-Processing"],
                 github:"https://github.com/madhavisolanki-ui/AI-Resume-Analyzer",
-                live:"#"
+                live:"https://resume-analyzer-09.streamlit.app/"
             },
            {
                 title:"AI-support-bot",
