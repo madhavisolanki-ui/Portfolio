@@ -26,7 +26,7 @@ function App(){
                     <div className="font-mono font-bold text-xl">
                     <a href="#home" className="flex flex-col leading-none group transition-all duration-300">
     <span className="text-lg font-bold text-slate-100 tracking-wide group-hover:text-teal-400 transition-colors">
-    MADHAVI SOLANKI
+    <M.S />
     </span>
     <span className="text-[10px] text-teal-400 uppercase tracking-[0.2em] font-mono opacity-80 group-hover:opacity-100 transition-opacity">
     Aspiring AI Engineer
