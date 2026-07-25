@@ -88,7 +88,7 @@ function App(){
 
 {/* Highlight Line */}
 <p className="text-slate-500 text-sm md:text-base mb-6">
-    Open Source Contributor • GSSoC'26 • IIT Ropar Summer Intern
+    Open Source Contributor • GSSoC'26 
 </p>
 
 {/* Description */}
@@ -247,7 +247,7 @@ function App(){
             <div className="absolute -left-[5px] top-1 h-2.5 w-2.5 rounded-full bg-slate-800 group-hover:bg-teal-400 transition-colors duration-300"></div>
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2">
                 <h4 className="text-lg font-bold text-slate-200">Senior Secondary (Class XII)</h4>
-                <span className="text-teal-400 font-mono text-sm">2022 - 2024</span>
+                <span className="text-teal-400 font-mono text-sm">2023 - 2024</span>
             </div>
             <p className="text-slate-400 font-medium">City Convent School</p>
         </div>
@@ -306,7 +306,14 @@ function App(){
                 desc:"Built an AI-powered Resume Analyzer using Python, NLP and Streamlit that automatically extracts skills, analyzes resume content and provides ATS-based feedback to improve resume quality.",
                 tech:["Python","NLP","Machine Learning","AI","PDF-Processing","Streamlit","Text-Processing"],
                 github:"https://github.com/madhavisolanki-ui/AI-Resume-Analyzer",
-                live:"#"
+                live:"https://resume-analyzer-09.streamlit.app/"
+            },
+           {
+                title:"AI-support-bot",
+                desc:"AI-powered IT support bot for automated, context-aware responses from internal policies and procedures.",
+                tech:["Python","RAG","GROQ","Gen-AI","AI-chatbot","Streamlit","llamaindex"],
+                github:"https://github.com/madhavisolanki-ui/AI-support-bot",
+                live:"https://ai-support-bot.streamlit.app/"
             },
             {
                 title:"Student-Performance-Analyzer",
@@ -346,22 +353,6 @@ function App(){
     </h2>
 
     <div className="space-y-12">
-        {/* IIT Ropar Internship */}
-        <div className="relative pl-8 border-l border-slate-800 group">
-            <div className="absolute -left-[5px] top-1 h-2.5 w-2.5 rounded-full bg-slate-800 group-hover:bg-teal-400 transition-colors duration-300"></div>
-            
-            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2">
-                <h4 className="text-lg font-bold text-slate-200">Summer Intern</h4>
-                <span className="text-teal-400 font-mono text-sm">May 2026 - Present</span>
-            </div>
-            <p className="text-slate-400 font-medium mb-4">IIT Ropar | Vicharanshala </p>
-            
-            <ul className="list-disc list-outside text-slate-500 text-sm leading-relaxed max-w-xl ml-4 space-y-2">
-                <li>Worked under Prof. Sudarshan Iyenger on <span className="text-slate-300">FAQ Project</span>.</li>
-                <li>Implemented efficient data processing scripts, reducing computation time by 30%.</li>
-                <li>Gained hands-on experience in research methodology, literature review, and experimental analysis.</li>
-            </ul>
-        </div>
 
         {/* Open Source Contribution (Already discussed) */}
         <div className="relative pl-8 border-l border-slate-800 group">
@@ -392,7 +383,10 @@ function App(){
             { title: "Develop a vision-enabled generative AI application", org: "Microsoft Learn", date: "Jun 2026", img: "/images/gen-ai-vision.png" },
             { title: "MongoDB Overview: Core Concepts and Architecture", org: "MongoDB", date: "Mar 2026", img: "/images/MongoDB.png" },
             { title: "GenAI Powered Data Analytics Job Simulation", org: "TATA Group", date: "Nov 2025", img: "/images/tata.png" },
-            { title: "Data Science", org: "Infosys Springboard", date: "Aug 2025", img: "/images/data-science.png" }
+            { title: "Data Science", org: "Infosys Springboard", date: "Aug 2025", img: "/images/data-science.png" },
+            { title: "Power BI Data Analyst Associate", org: "Microsoft", date: "Jun 2026", img: "/images/data analyst.png" },
+            { title: "Agentic AI Foundations Associate (1Z0-1157-26)", org: "Oracle", date: "Jun 2026", img: "/images/agentic.png" },
+            { title: "AI and Cybersecurity Awareness", org: "Infosys Springboard", date: "Jun 2026", img: "/images/AI for All.png" }
         ].map((cert, i) => (
             <div key={i} className="group relative bg-slate-900/30 border border-slate-800 rounded-xl p-6 hover:border-teal-500/50 transition-all duration-300 overflow-hidden">
                 
