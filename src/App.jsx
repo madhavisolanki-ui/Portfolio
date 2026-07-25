@@ -88,7 +88,7 @@ function App(){
 
 {/* Highlight Line */}
 <p className="text-slate-500 text-sm md:text-base mb-6">
-    Open Source Contributor • GSSoC'26 • IIT Ropar Summer Intern
+    Open Source Contributor • GSSoC'26 • AI & ML Enthusiast • Competitive Programmer
 </p>
 
 {/* Description */}
