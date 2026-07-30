@@ -55,7 +55,7 @@ function App(){
             
                     {/* Resume Button (Professional Touch) */}
                     <a 
-                        href="/images/resume-12.pdf" 
+                        href="/images/Resume.pdf" 
                         target="_blank"
                         className="ml-4 px-5 py-2 text-sm font-medium border border-teal-500/30 text-teal-400 rounded-full hover:bg-teal-500/10 transition-all"
                     >
@@ -143,7 +143,7 @@ function App(){
     </a>
 
     <a
-    href="/images/resume-12.pdf"
+    href="/images/Resume.pdf"
     target="_blank"
     rel="noreferrer"
     className="border border-teal-500 text-teal-400 px-6 py-3 rounded-lg hover:bg-teal-500/10 transition-all"
